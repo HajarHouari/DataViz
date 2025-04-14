@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sécurité des sites de communes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .menu-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .menu-buttons button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .menu-buttons button:hover {
+      background-color: #d97c00;
+    }
+    .welcome {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 30px auto;
+      max-width: 800px;
+    }
+    .welcome h2 {
+      color: var(--primary);
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Analyse de la sécurité informatique des sites communaux</h1>
+    <p>Ayoub EL HOUFIA / Hajar HOUARI</p>
+  </header>
+
+  <!-- Page d'accueil avec menu -->
+  <section class="welcome">
+    <h2>Bienvenue sur notre projet de dataviz</h2>
+    <p>Choisissez une visualisation :</p>
+    <div class="menu-buttons">
+      <button onclick="location.href='#barChart'">Catégories de sécurité</button>
+      <button onclick="location.href='#pieChart'">Langages utilisés</button>
+      <button onclick="location.href='#mapChart'">Carte des communes</button>
+      <button onclick="location.href='#serversChart'">Serveurs web</button>
+    </div>
+  </section>
+
+  <main>
+    <!-- Graphique 1 : Répartition par catégorie de sécurité -->
+    <section id="barChart" class="chart">
+      <h2>Répartition par catégorie de sécurité</h2>
+      <div class="viz"></div>
+      <!-- Légende positionnée en haut à droite -->
+      <div class="legend" id="legend-bar"></div>
+    </section>
+
+    <!-- Graphique 2 : Langages de programmation utilisés -->
+    <section id="pieChart" class="chart">
+      <h2>Langages de programmation utilisés</h2>
+      <div class="viz"></div>
+      <!-- Légende positionnée en haut à droite -->
+      <div class="legend" id="legend-pie"></div>
+    </section>
+
+    <!-- Graphique 3 : Carte des communes -->
+    <section id="mapChart" class="chart">
+      <h2>Carte des communes et niveaux de sécurité</h2>
+      <div class="viz"></div>
+      <!-- Légende positionnée en haut à droite -->
+      <div class="legend" id="legend-map"></div>
+    </section>
+
+    <!-- Graphique 4 : Serveurs web (barres horizontales) -->
+    <section id="serversChart" class="chart">
+      <h2>Serveurs web utilisés</h2>
+      <div class="viz"></div>
+      <!-- Légende positionnée en haut à droite -->
+      <div class="legend" id="legend-servers"></div>
+    </section>
+  </main>
+
+  <!-- Bouton "Remonter en haut" -->
+  <button id="scrollTopBtn" title="Revenir en haut">↑</button>
+
+  <div class="tooltip"></div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="script.js"></script>
+</body>
+</html>
